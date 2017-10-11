@@ -32,13 +32,13 @@ Category.findAll({
             continue;
         }
 
-        who = findPath(data2, c)
+        who = findPath(data2, c.parentId)
         who.children.push(Object.assign({}, c.toJSON(),{ children: [] }))
     }
 
-    function findPath(data, obj, task = []){
+    function findPath(data, pid, task = []){
         for(let d of data){
-            if(d.id == obj.parentId){
+            if(d.id == pid){
                 return d;
             }
             if(d.children.length){
@@ -46,7 +46,7 @@ Category.findAll({
             }
         }
         let pop = task.pop();
-        return findPath(pop.children, obj, task)
+        return findPath(pop.children, pid, task)
     }
 
     console.log(data2)

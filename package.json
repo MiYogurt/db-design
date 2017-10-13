@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "acl": "^0.4.11",
     "benchmark": "^2.1.4",
     "g2l": "0.0.1",
     "microtime": "^2.1.6",
